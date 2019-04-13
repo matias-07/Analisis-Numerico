@@ -9,6 +9,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{amsmath}
 \usepackage{multirow}
 
 \pagestyle{fancy}
@@ -40,7 +41,7 @@
 	\begin{tabular}{ |l|l|l| }
 		\hline
 		\multicolumn{3} { |c| } {\textbf{Integrantes del grupo}} \\ \hline
-		Santamaría Tomás & padron & mail\\ \hline
+		Santa María Tomás & padron & mail\\ \hline
 	 	Hemmingsen Lucas & padron & mail\\ \hline
 	 	Huenul Matías & 102135 & matias.huenul.07@gmail.com\\ \hline
 	\end{tabular}
@@ -50,6 +51,21 @@
 
 
 \section{Introducción}\label{sec:introd}
+El objetivo del presente trabajo práctico es obtener aproximaciones de dos funciones y utilizarlas para calcular su valor en distintos puntos, estimando los errores cometidos en ambos casos y analizando las causas de los mismos en base a los conceptos teóricos vistos en el curso.
+
+
+\section{Conceptos teóricos}\label{sec:conceptos}
+\begin{description}
+\item[Teorema de Taylor] Este teorema permite obtener aproximaciones polinomiales de funciones diferenciables en un cierto entorno, así también como una cota para el error de aproximación. Sea $ k \geq 1 $ un número entero y $ f(x) $ una función $k$ veces diferenciable en $ x_0 $, su polinomio de Taylor de orden $ k $ en torno a $  x_0 $ se define como:
+	\begin{equation}
+	P_k(x) = \sum_{i=0}^k \frac{f^{(i)}(x_0)}{i!}(x - x_0)^i
+	\end{equation}
+y el error que se comete aproximando $ f(x) $ a través de $ P_k(x) $ es:
+	\begin{equation}
+	R_k(x) = \frac{f^{(k+1)}(c)}{(k+1)!}(x - x_0)^{k+1}
+	\end{equation}
+donde $c \in [x_0, x]$ o $c \in [x, x_0]$. 
+\end{description}
 
 
 \section{Parte 1}\label{sec:parte1}
@@ -59,9 +75,30 @@ El segundo polinomio de Taylor de la función $ f(x) = e^xcos(x) $ alrededor de 
 	\end{equation}
 Utilizando este polinomio para aproximar $ f(x) $ en $ x = 0.5 $ se obtiene:
 	\begin{equation}
-	f(0,5) \approx P_2(0,5) = 1,4468
+	f(0,5) \approx P_2(0,5) = 1,4469
 	\end{equation}
-
+El error estará dado por:
+	\begin{equation}
+	R_2(x) = \frac{-2e^{x}(sen(c) + cos(c))}{6}(x - \frac{\pi}{6})^3
+	\end{equation}
+Luego el error cometido al realizar la aproximación es:
+	\begin{equation*}
+	R_2(0,5) = 7,2226*10^{-6}(sen(c) + cos(c))
+	\end{equation*}
+	\begin{equation*}
+	| R_2(0,5) | \leq 7,2226*10^{-6}(|sen(c)| + |cos(c)|) \leq 7,2226*10^{-6}*2
+	\end{equation*}
+	\begin{equation}
+	| R_2(0,5) | \leq 1.4445*10^{-5}
+	\end{equation}
+La cota superior del error de aproximación de $ f(x) $ al usar $ P_2(x) $ en el intervalo $ [0, 1] $ es:
+	\begin{equation*}
+	| R_2 | \leq | \frac{-2e^{1}(sen(c) + cos(c))}{6}(1 - \frac{\pi}{6})^3 |
+	\end{equation*}
+	\begin{equation}
+	| R_2 | \leq 0,19594
+	\end{equation}
+Al evaluar en Octave se obtiene $ f(0,5) = 1,4469 $. Este resultado coincide con el calculado mediante la aproximación, lo cual es esperable ya que de acuerdo a $(6)$, $P_2(x)$ logra aproximar a $f(x)$ hasta cuatro decimales sin error y por lo tanto, al redondear simétricamente como lo hace Octave, se llega al mismo valor.
 
 \section{Parte 2}\label{sec:parte2}
 
