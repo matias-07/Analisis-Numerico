@@ -11,6 +11,35 @@
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -42,7 +71,7 @@
 		\hline
 		\multicolumn{3} { |c| } {\textbf{Integrantes del grupo}} \\ \hline
 		Santa María Tomás & padron & mail\\ \hline
-	 	Hemmingsen Lucas & padron & mail\\ \hline
+	 	Hemmingsen Lucas & 76187 & lhemmingsen@fi.uba.ar\\ \hline
 	 	Huenul Matías & 102135 & matias.huenul.07@gmail.com\\ \hline
 	\end{tabular}
 	\vfill
@@ -101,12 +130,92 @@ La cota superior del error de aproximación de $ f(x) $ al usar $ P_2(x) $ en el
 Al evaluar en Octave se obtiene $ f(0,5) = 1,4469 $. Este resultado coincide con el calculado mediante la aproximación, lo cual es esperable ya que de acuerdo a $(6)$, $P_2(x)$ logra aproximar a $f(x)$ hasta cuatro decimales sin error y por lo tanto, al redondear simétricamente como lo hace Octave, se llega al mismo valor.
 
 \section{Parte 2}\label{sec:parte2}
+	\begin{enumerate}[label=(\alph*)]
+		\item 
+			El primer método que utilizaremos para aproximar la función error\cite{error_function} será desarrollar la serie de Taylor 
+			de $e^{-x^2}$ alrededor de $x=0$ y luego aplicaremos la integral definida a cada término de la serie y 
+			lo multiplicaremos por $2/\sqrt{\pi}$.\\
+			Sabiendo que el desarrollo de Taylor de $e^x$ alrededor del cero es:
+				\begin{equation}
+					e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty}\frac{x^k}{k!}
+				\end{equation}
+			Sustituyendo para $e^{-x^2}$:
+				\begin{equation}
+					e^{-x^2} = 1 - x^2 + \frac{x^4}{2!} - \frac{x^6}{3!} + ... = \sum_{k=0}^{\infty}\frac{(-1)^k x^{2k}}{k!}
+				\end{equation}
+			Integrando cada término:
+				\begin{equation}
+					\int_{0}^{x}e^{-t^2}dt= x - \frac{x^3}{3} + \frac{x^5}{5\cdot2!} - \frac{x^7}{7\cdot3!} + ... = \sum_{k=0}^{\infty}\frac{(-1)^k x^{2k+1}}{(2k+1)\cdot k!}
+				\end{equation}
+			Y finalmente, multiplicando por $2/\sqrt{\pi}$ obtenemos:
+				\begin{equation}
+					erf(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^2}dt = \frac{2}{\sqrt{\pi}}\sum_{k=0}^{\infty}\frac{(-1)^k x^{2k+1}}{(2k+1)\cdot k!}
+				\end{equation}
+
+			Como calcularemos un número limitado de términos de esta serie, tendremos un error de truncamiento, que estará dado por:
+
+
+			Como segundo método, aproximaremos la integral de la función error con el método del trapecio\cite{burden1}. 
+			En particular, utilizaremos el método del trapecio compuesto\cite{burden2}, con el que podremos ir variando 
+			la precisión del resultado según la cantidad de subintervalos utilizados para calcular la integral.
+
+			La regla del trapecio compuesta para $n$ subintervalos para una función $f(x)$ en un intervalo $[a,b]$ está dada por:
+				\begin{equation}
+					\int_{a}^{b}f(x)dx = \frac{h}{2}\left[f(a) + 2\sum_{j=1}^{n-1}f(x_{j})+f(b)\right]-\frac{b-a}{12}h^{2}f''(\mu)
+				\end{equation}
+			donde $h=(b-a)/n$ es el tamaño de cada subintervalo y $x_j = a + jh$ para cada $j=1,2,..,n$. El último 
+			término corresponde al error del método donde $\mu \in (a,b)$.
+
+			Para nuestra función error, siendo $f(x) = e^{-x^2}$ tenemos:
+				\begin{equation}
+					\int_{0}^{b}e^{-x^2}dx = \frac{h}{2}\left[1 + 2\sum_{j=1}^{n-1}e^{-{x_j}^2}+e^{-b^2}\right]-\frac{b}{12}h^{2}f''(\mu)
+				\end{equation}
+			Finalmente, multiplicando por $2/\sqrt{\pi}$ obtenemos nuestra segunda aproximación de la función error:
+				\begin{equation}
+					erf(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^2}dt \simeq \frac{h}{\sqrt{\pi}}\left[1 + 2\sum_{j=1}^{n-1}e^{-{x_j}^2}+e^{-x^2}\right]
+				\end{equation}
+			donde $h = x/n$ y $x_j = jh$.
+		
+		\item
+			A continuación se encuentra el código en \emph{Octave} de la aproximación de la función error mediante polinomios de Taylor:
+			\lstinputlisting[language=Octave]{erf_taylor.m}
+			
+			La función para la aproximación utilizando el método de los trapecios implementada en \emph{Octave} es:
+			\lstinputlisting[language=Octave]{erf_trapecios.m}
+
+			Se pueden encontrar ambos archivos, \textit{erf\_taylor.m} y \textit{erf\_trapecios.m}, en la presente entrega.
+
+			El módulo principal, \textit{ejercicio2.m}, realiza llamadas a ambos métodos variando el número de iteraciones para 
+			cada método entre uno y diez, y calcula el error absoluto con respecto a la función \emph{erf} de \emph{Octave}.
+			Como la aproximación por el método de los trapecios converge muy lentamente, se implementó una función que calcule el número 
+			de iteraciones necesarias para lograr un número de cifras significativas, que es pasada por parámetros.
+			Todos estos resultados se escriben en un archivo, \emph{resultados.txt}.
+			\lstinputlisting[language=Octave]{ejercicio2.m}
+		
+		\item
+			A continuación se muestran los resultados del archivo \emph{resultados.txt}:
+			\lstinputlisting{resultados.txt}
+
+	\end{enumerate}
 
 
 \section{Parte 3}\label{sec:parte3}
 
 
-\section{Referencias}\label{sec:parte4}
+\begin{thebibliography}{9} 
+	\bibitem{error_function}
+		Error Function - Wikipedia, \url{https://en.wikipedia.org/wiki/Error_function}
+	
+	\bibitem{burden1}
+		Richard L. Burden, J. Douglas Faires, \emph{Numerical Analysis (9th edition)} \\
+		Brooks/Cole, Cengage Learning, 2010, Sección 4.3, página 194
+
+	\bibitem{burden2}
+	Richard L. Burden, J. Douglas Faires, \emph{Numerical Analysis (9th edition)} \\
+	Brooks/Cole, Cengage Learning, 2010, Sección 4.4, página 206
+	 
+\end{thebibliography}
+
 
 
 \end{document}
