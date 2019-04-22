@@ -70,7 +70,7 @@
 	\begin{tabular}{ |l|l|l| }
 		\hline
 		\multicolumn{3} { |c| } {\textbf{Integrantes del grupo}} \\ \hline
-		Santa María Tomás & padron & mail\\ \hline
+		Santa María Tomás & 92797 & tomasisantamaria@gmail.com\\ \hline
 	 	Hemmingsen Lucas & 76187 & lhemmingsen@fi.uba.ar\\ \hline
 	 	Huenul Matías & 102135 & matias.huenul.07@gmail.com\\ \hline
 	\end{tabular}
@@ -128,6 +128,9 @@ La cota superior del error de aproximación de $ f(x) $ al usar $ P_2(x) $ en el
 	| R_2 | \leq 0,19594
 	\end{equation}
 Al evaluar en Octave se obtiene $ f(0,5) = 1,4469 $. Este resultado coincide con el calculado mediante la aproximación, lo cual es esperable ya que de acuerdo a $(6)$, $P_2(x)$ logra aproximar a $f(x)$ hasta cuatro decimales sin error y por lo tanto, al redondear simétricamente como lo hace Octave, se llega al mismo valor.
+
+A continuación se encuentra el código en \emph{Octave} de la implementación particular del segundo polinomio de Taylor para la función representada en el problema:
+			\lstinputlisting[language=Octave]{taylor_ej1.m}
 
 \section{Parte 2}\label{sec:parte2}
 	\begin{enumerate}[label=(\alph*)]
