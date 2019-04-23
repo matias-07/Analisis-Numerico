@@ -110,21 +110,25 @@ Utilizando este polinomio para aproximar $ f(x) $ en $ x = 0.5 $ se obtiene:
 	\end{equation}
 El error estará dado por:
 	\begin{equation}
-	R_2(x) = \frac{-2e^{x}(sen(c) + cos(c))}{6}(x - \frac{\pi}{6})^3
+	R_2(x) = \frac{-2e^{c}(sen(c) + cos(c))}{6}(x - \frac{\pi}{6})^3
 	\end{equation}
 Luego el error cometido al realizar la aproximación es:
 	\begin{equation*}
-	R_2(0,5) = 7,2226*10^{-6}(sen(c) + cos(c))
+	R_2(0,5) = -4,3807*10^{-6}*e^{c}(sen(c) + cos(c))
+	\end{equation*}
+Sabiendo que $ c \in [0,5 ; \frac{\pi}{6}] $ podemos tomar $ c = \frac{\pi}{6} $ para obtener una cota superior de este error:
+	\begin{equation*}
+	| R_2(0,5) | \leq 4,3807*10^{-6}*e^{c}(|sen(c)| + |cos(c)|)
 	\end{equation*}
 	\begin{equation*}
-	| R_2(0,5) | \leq 7,2226*10^{-6}(|sen(c)| + |cos(c)|) \leq 7,2226*10^{-6}*2
+	| R_2(0,5) | \leq 4,3807*10^{-6}*e^{\frac{\pi}{6}}(|sen(\frac{\pi}{6})| + |cos(\frac{\pi}{6})|)
 	\end{equation*}
 	\begin{equation}
-	| R_2(0,5) | \leq 1.4445*10^{-5}
+	| R_2(0,5) | \leq 1,0102*10^{-5}
 	\end{equation}
-La cota superior del error de aproximación de $ f(x) $ al usar $ P_2(x) $ en el intervalo $ [0, 1] $ es:
+Por otro lado, la cota superior del error de aproximación de $ f(x) $ al usar $ P_2(x) $ en el intervalo $ [0, 1] $, tomando $ c=1 $, es:
 	\begin{equation*}
-	| R_2 | \leq | \frac{-2e^{1}(sen(c) + cos(c))}{6}(1 - \frac{\pi}{6})^3 |
+	| R_2 | \leq | \frac{-2e^{1}(sen(1) + cos(1))}{6}(1 - \frac{\pi}{6})^3 |
 	\end{equation*}
 	\begin{equation}
 	| R_2 | \leq 0,19594
@@ -265,6 +269,9 @@ Este código imprime los siguientes resultados cuando se corre desde Octave:
 	\bibitem{burden2}
 	Richard L. Burden, J. Douglas Faires, \emph{Numerical Analysis (9th edition)} \\
 	Brooks/Cole, Cengage Learning, 2010, Sección 4.4, página 206
+	
+	\bibitem{taylor}
+	Taylor Series - Wolfram MathWorld, \url{http://mathworld.wolfram.com/TaylorSeries.html}
 	 
 \end{thebibliography}
 
