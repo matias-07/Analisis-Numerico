@@ -177,8 +177,18 @@ Este código imprime los siguientes resultados cuando se corre desde Octave:
 					erf(x) = \frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^2}dt = \frac{2}{\sqrt{\pi}}\sum_{k=0}^{\infty}\frac{(-1)^k x^{2k+1}}{(2k+1)\cdot k!}
 				\end{equation}
 
-			Como calcularemos un número limitado de términos de esta serie, tendremos un error de truncamiento, que estará dado por:
-
+			Como calcularemos un número limitado de términos de esta serie, la dejamos expresada para una cantidad de \emph{n} pasos:
+				\begin{equation}
+					P_{n}(x) = \frac{2}{\sqrt{\pi}}\sum_{k=0}^{n}\frac{(-1)^k x^{2k+1}}{(2k+1)\cdot k!}
+				\end{equation}
+			y el error de truncamiento de la serie estará dado por:
+				\begin{equation}
+					R_{n}(x) = \frac{2}{\sqrt{\pi}}\frac{f^{(n+1)}(c)}{(n+1)!}x^{n+1}=\frac{2}{\sqrt{\pi}}\frac{(-2)^{n+1}e^{-2c}}{(n+1)!}x^{n+1}
+				\end{equation}
+			donde $c \in [0, x]$ o $c \in [x, 0]$. Para $x\geq0$, $e^{-2c}\leq1$, entonces:
+				\begin{equation}
+					R_{n}(x) = \frac{2}{\sqrt{\pi}}\frac{(-2)^{n+1}}{(n+1)!}x^{n+1}
+				\end{equation}
 
 			Como segundo método, aproximaremos la integral de la función error con el método del trapecio\cite{burden1}. 
 			En particular, utilizaremos el método del trapecio compuesto\cite{burden2}, con el que podremos ir variando 
@@ -218,9 +228,59 @@ Este código imprime los siguientes resultados cuando se corre desde Octave:
 			\lstinputlisting[language=Octave]{ejercicio2.m}
 		
 		\item
-			A continuación se muestran los resultados del archivo \emph{resultados.txt}:
+			A continuación se muestran los resultados de la corrida del módulo \emph{ejercicio2.m} generados en el archivo \emph{resultados.txt}:
 			\lstinputlisting{resultados.txt}
 
+			Las siguientes tablas muestran los resultados y las iteraciones necesarias para lograr una precisión de cinco, seis y 
+			siete cifras significativas con cada método de aproximación.
+
+				\begin{table}[H]
+					\begin{center}
+						\begin{tabular}{ | c | r | c | }
+						\hline
+						Cifras significativas & Resultado & Iteraciones \\ \hline
+						5 & 0.84270 & 7 \\ \hline
+						6 & 0.842700 & 8 \\ \hline
+						7 & 0.8427008 & 9 \\
+						\hline
+						\end{tabular}
+						\caption{Resultados aproximando con polinomios de Taylor.}
+					\end{center}
+				\end{table}
+
+
+				\begin{table}[H]
+					\begin{center}
+						\begin{tabular}{ | c | r | c | }
+						\hline
+						Cifras significativas & Resultado & Iteraciones \\ \hline
+						5 & 0.84270 & 118 \\ \hline
+						6 & 0.842700 & 372 \\ \hline
+						7 & 0.8427008 & 1177 \\
+						\hline
+						\end{tabular}
+						\caption{Resultados aproximando con el método de los trapecios.}
+					\end{center}
+				\end{table}
+
+		\item
+			Como puede observarse a simple vista aproximando la función error con polinomios de Taylor resultó mucho
+			más eficiente que con el método de los trapecios.
+			Se puede apreciar que en la primera iteración ambos métodos arrojaron resultados parecidos y con cotas de error 
+			similares.
+
+			Sin embargo, con solo siete iteraciones con la aproximación con Taylor se logró una precisión de 
+			cinco cifras significativas, mientras que con el método de los trapecios en la misma cantidad de 
+			iteraciones se logran solo 2 cifras significativas. 
+			
+			Aproximando por el polinomio de Taylor con nueve iteraciones se logra una precisión de siete cifras significativas. 
+			Es decir, va logrando una precisión de una cifra significativa por iteración. En cambio, 
+			se necesitaron 118 iteraciones para poder lograr cinco cifras significativas aproximando con el método de los trapecios y 
+			1177 para poder lograr una precisión de siete cifras significativas. 
+
+			Podemos concluir que, aunque ambos métodos convergen al resultado, la aproximación por polinomios de Taylor 
+			tiene una velocidad de convergencia mucho mayor que la aproximación por el método de los trapecios, por ende, 
+			la aproximación por polinomios de Taylor resulta un muy buen método para aproximar la función error.
 	\end{enumerate}
 
 
@@ -251,7 +311,7 @@ Este código imprime los siguientes resultados cuando se corre desde Octave:
 		\item
 			\begin{itemize}
 				\item Problema Matemático (PM): En la parte 1, el problema matemático es la definición del Polinomio de Taylor presentada en la ecuación \emph{(1)}. En cuanto a la segunda parte, la instancia es la función error presentada en el enunciado.
-				\item Problema Numérico (PN): Las aproximaciones presentadas en \emph{(3)} y \emph{(12)} representan las instancias de problema numérico del trabajo práctico.
+				\item Problema Numérico (PN): Las aproximaciones presentadas en \emph{(3)}, \emph{(11)} y \emph{(14)} representan las instancias de problema numérico del trabajo práctico.
 				\item Método Numérico (MN): Los pasos necesarios para resolver el problema matemático e implementarlo en una computadora.
 				\item Algoritmo: Los algoritmos presentados en \textit{erf\_taylor.m} y \textit{erf\_trapecios.m}, además de la resolución particular del polinomio existente en \textit{taylor\_ej1.m}, ya expuestos en el presente Trabajo Práctico.
 			\end{itemize}
