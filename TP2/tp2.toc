@@ -1,0 +1,12 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}{section.1}
+\contentsline {section}{\numberline {2}Conceptos te\IeC {\'o}ricos}{2}{section.2}
+\contentsline {section}{\numberline {3}Desarrollo}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Parte A}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Parte B}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Parte C}{3}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Parte D}{3}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Parte E}{3}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Parte F}{3}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Parte G}{3}{subsection.3.7}
+\contentsline {section}{\numberline {4}Conclusiones}{3}{section.4}
