@@ -100,9 +100,56 @@
 	\subsection{Método de Runge-Kutta}
 	\subsection{Método de Nystr\"om}
 	\subsection{Método de Newmark}
-	\subsection{Sistema de ecuaciones diferenciales}
-	\subsection{Ecuaciones diferenciales de orden mayor o igual a 2}
 
+	\subsection{Sistema de ecuaciones diferenciales de primer orden}\cite{burden_system_diff_eq}
+		Sea un sistema de ecuaciones diferenciales de primer orden con la forma:
+
+		\begin{equation}
+			\label{eq1}
+			\begin{cases}
+				\frac{du_{1}}{dt}=f_{1}(t,u_{1},u_{2},...,u_{m})\\
+				\frac{du_{2}}{dt}=f_{2}(t,u_{1},u_{2},...,u_{m})\\
+				\vdots\\
+				\frac{du_{m}}{dt}=f_{m}(t,u_{1},u_{2},...,u_{m})
+			\end{cases}
+		\end{equation}
+
+		para $a \leq t \leq b$, con condiciones iniciales:
+		\begin{equation}
+			\label{eq2}
+			u_{1}(a) = \alpha_{1}, u_{2}(a)=\alpha_{2}, \dots, u_{m}(a)=\alpha_{m}
+		\end{equation}
+		El objetivo es encontrar \emph{m} funciones $u_{1}(t),u_{2}(t),\dots,u_{m}(t)$ que satisfacen 
+		cada una de las ecuaciones diferenciales junto con las condiciones iniciales.
+		Los métodos para resolver sistemas de ecuaciones diferenciales de primer orden son simplemente 
+		generalizaciones de los métodos para una sola ecuación diferencial presentados anteriormente.
+
+	\subsection{Ecuaciones diferenciales de orden mayor a 1}\cite{burden_higher_order_diff_eq}
+			Una ecuación diferencial de grado \emph{m}
+			\begin{equation}
+				y^{(m)}(t)=f(t,y,y',\dots,y^{(m-1)})
+			\end{equation}
+			con $a \leq t \leq b$ y condiciones iniciales $y(a)=\alpha_{1},y'(a)=\alpha_{2},\dots,y^{(m-1)(a)=\alpha_{m}}$ 
+			puede convertirse a un sistema de ecuaciones de la forma de \eqref{eq1} y \eqref{eq2}.
+
+			Sea $u_{1}(t)=y(t),u_{2}(t)=y'(t),\dots,u_{m}(t)=y^{(m-1)}(t)$. Esto produce el sistema de ecuaciones diferenciales 
+			de primer orden
+
+			\begin{equation}
+				\frac{du_{1}}{dt}=\frac{dy}{dt}=u_{2},\frac{du_{2}}{dt}=\frac{dy'}{dt}=u_{3},\dots,\frac{du_{m-1}}{dt}=\frac{dy^{(m-2)}}{dt}=u_{m}
+			\end{equation}
+
+			y
+
+			\begin{equation}
+				\frac{du_{m}}{dt}=\frac{dy^{(m-1)}}{dt}=y^{(m)}=f(t,y,y',\dots,y^{(m-1)})=f(t,u_{1},u_{2},\dots,u_{m})
+			\end{equation}
+
+			con condiciones iniciales
+
+			\begin{equation}
+				u_{1}(a)=y(a)=\alpha_{1}, u_{2}(a)=y'(a)=\alpha_{2},\dots,u_{m}(a)=y^{(m-1)}(a)=\alpha_{m}
+			\end{equation}
 \section{Desarrollo}\label{sec:desarrollo}
 	\subsection{Parte A}\label{sec:parteA}
 
@@ -187,7 +234,19 @@
 
 
 \begin{thebibliography}{9} 
-	
+	\bibitem{burden_system_diff_eq} 
+		Richard L. Burden, J. Douglas Faires\\
+		\textit{Numerical Analysis (9th edition)}. \\
+		Brooks/Cole - Cengage Learning\\
+		Sección 5.9 Higher Order Equations and Systems of Differential Equations\\
+		Páginas 328-334
+
+	\bibitem{burden_higher_order_diff_eq} 
+		Richard L. Burden, J. Douglas Faires\\
+		\textit{Numerical Analysis (9th edition)}.\\ 
+		Brooks/Cole - Cengage Learning\\
+		Sección 5.9 Higher Order Equations and Systems of Differential Equations\\
+		Páginas 334-336
 	 
 \end{thebibliography}
 

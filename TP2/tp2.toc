@@ -5,10 +5,10 @@
 \contentsline {subsection}{\numberline {2.2}M\IeC {\'e}todo de Runge-Kutta}{2}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}M\IeC {\'e}todo de Nystr\"om}{2}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}M\IeC {\'e}todo de Newmark}{2}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Sistema de ecuaciones diferenciales}{2}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Ecuaciones diferenciales de orden mayor o igual a 2}{2}{subsection.2.6}
-\contentsline {section}{\numberline {3}Desarrollo}{2}{section.3}
-\contentsline {subsection}{\numberline {3.1}Parte A}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {2.5}Sistema de ecuaciones diferenciales de primer orden}{2}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Ecuaciones diferenciales de orden mayor a 1}{2}{subsection.2.6}
+\contentsline {section}{\numberline {3}Desarrollo}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Parte A}{3}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Parte B}{3}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Parte C}{4}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Parte D}{4}{subsection.3.4}
