@@ -87,7 +87,7 @@
 	
 \section{Introducción}\label{sec:introd}
 	El objetivo del presente trabajo práctico es utilizar los distintos metodos numéricos de problema de valor inicial 
-	para ecuaciones diferenciales ordinarias, para resolver el "Problema de los Tres Cuerpos Restringido o de Euler" 
+	para ecuaciones diferenciales ordinarias, para resolver el ``Problema de los Tres Cuerpos Restringido o de Euler'' 
 	y realizar una comparación de los resultados con cada método.
 
 	Los métodos que utilizaremos son el método de Euler, Runge-Kutta de orden 2 y 4, Nystr\"om y Newmark.
@@ -96,7 +96,12 @@
 
 
 \section{Conceptos teóricos}\label{sec:conceptos}
-
+	\subsection{Método de Euler}
+	\subsection{Método de Runge-Kutta}
+	\subsection{Método de Nystr\"om}
+	\subsection{Método de Newmark}
+	\subsection{Sistema de ecuaciones diferenciales}
+	\subsection{Ecuaciones diferenciales de orden mayor o igual a 2}
 
 \section{Desarrollo}\label{sec:desarrollo}
 	\subsection{Parte A}\label{sec:parteA}
@@ -127,8 +132,8 @@
 		\begin{equation}
 			\begin{cases}
 				x'_{1}(t) = v_{1}(t)\\
-				x'_{2}(t) = v_{2}(t)\\
 				v'_{1}(t) = 2v_{2}(t) + x_{1}(t) - \eta\frac{x_{1}(t) + \mu}{d_{1}(t)^{3}} - \mu\frac{x_{1}(t) - \eta}{d_{2}(t)^{3}}\\
+				x'_{2}(t) = v_{2}(t)\\				
 				v'_{2}(t) = -2v_{1}(t) + x_{2}(t) - \eta\frac{x_{2}(t)}{d_{1}(t)^{3}} - \mu\frac{x_{2}(t)}{d_{2}(t)^{3}}
 			\end{cases}
 		\end{equation}
@@ -138,15 +143,29 @@
 		\begin{equation}
 			\begin{cases}
 				x_{1}(t_{0}) = x_{1_{0}}\\
-				x_{2}(t_{0}) = x_{2_{0}}\\
 				v_{1}(t_{0}) = v_{1_{0}}\\
+				x_{2}(t_{0}) = x_{2_{0}}\\				
 				v_{2}(t_{0}) = v_{2_{0}}\\
 			\end{cases}
 		\end{equation}
 
 	\subsection{Parte B}\label{sec:parteB}
-		
+		Ahora resolvamos el problema numéricamente con la función \emph{lsode} de \emph{Octave}.		
+		Primero creamos la función \emph{yprima}, que representa a la función \emph{f(t,y)}.
+		A continuación se detalla el código de la misma:
 
+		\lstinputlisting[language=Octave]{yprima.m}
+
+		Luego, desde la consola de \emph{Octave} ejecutamos la función \emph{lsode} con la función 
+		\emph{yprima} como entrada, con una posición inicial $(x_{1}, x_{2}) = (1.2, 0)$ y velocidad inicial 
+		$(v_{1}, v_{2}) = (0, -0.8)$ en el intervalo $[t_{0}, t_{1}) = [0, 2]$ con un $h=0.01$.
+		Para ello, ejecutamos:
+
+			\begin{lstlisting}
+				[y]=lsode('yprima',[1.2 0 0 -0.8],0:0.01:2)			
+			\end{lstlisting}
+		con lo que en la última iteración (en t=2) obtenemos una posición final 
+		$(x_{1}, x_{2}) = (-0.51306, 0.07881)$ y una velocidad final $(v_{1}, v_{2}) = (-1.18383, -0.48564)$.
 
 	\subsection{Parte C}\label{sec:parteC}
 		
