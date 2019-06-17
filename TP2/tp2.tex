@@ -228,6 +228,26 @@
 	\includegraphics[width=\textwidth]{partec.png}
 
 	\subsection{Parte D}\label{sec:parteD}
+	Resolveremos ahora el sistema en el intervalo $[0; 2]$ mediante el método de Euler. Las ecuaciones son:
+	\begin{equation}
+		\begin{cases}
+			x_1 (t_{k+1}) = x_1 (t_{k}) + hv_1 (t_{k})\\
+			v_1 (t_{k+1}) = x_2 (t_{k}) + h(2v_2 (t_{k}) + x_1 (t_{k}) - \eta\frac{x_1 (t_{k}) - \mu}{d_1 (t_{k})^{3}})\\
+			x_2 (t_{k+1}) = x_2 (t_{k}) + hv_2 (t_{k})\\
+			v_2 (t_{k+1}) = v_2 (t_{k}) + h(-2v_1 (t_{k}) + x_2 (t_{k}) - \eta\frac{x_2 (t_{k})}{d_1 (t_{k})^{3}}) - \mu\frac{x_2 (t_{k})}{d_2 (t_{k})^{3}})\\
+		\end{cases}
+	\end{equation}
+
+	El código de la función implementada en \emph{Octave} para la resolución con este método se muestra a continuación.
+	\lstinputlisting[language=Octave]{euler.m}
+	Primero utilizamos como condición inicial el vector $ y_0 = (1,2; 0; 0; -0,8) $ y como tolerancia el valor $ h = 0.01 $.\\
+	Los resultados para cada $t$ del intervalo se encuentran en el archivo \emph{resultados-parte-d.txt}.\\
+	En particular, el resultado obtenido para $t=2$ es:
+	\begin{equation}
+		y(2) = (-0.54958; -1.49872; 0.21286; -0.03654)
+	\end{equation}
+	La trayectoria obtenida en este caso es la siguiente.\\
+	\includegraphics[width=\textwidth]{parted.png}
 
 	\subsection{Parte E}\label{sec:parteE}
 
