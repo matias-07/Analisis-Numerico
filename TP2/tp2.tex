@@ -97,6 +97,16 @@
 
 \section{Conceptos teóricos}\label{sec:conceptos}
 	\subsection{Método de Euler}
+	Sea $ y'(t) = f(t, y) $ una ecuación diferencial ordinaria de primer orden con condición inicial $ y(t_{0}) = y_{0} $. Se quiere obtener la solución en $ N + 1 $ puntos en un intervalo dado, uniformemente espaciado con paso $h$. 
+	Se puede aproximar y(t) por su Polinomio de Taylor de primer orden:
+	\begin{equation}
+		y(t_{k} + h) \cong y(t_{k}) + hy'(t_{k})
+	\end{equation}
+	Pero como $y'(t_{k}) = f(t_{k}, y(t_{k}))$ y además $ t_{k+1} = t_{k} + h $ para todo $ 0 \leq k \leq N $, esta expresión se puede reescribir como:
+	\begin{equation}
+		y(t_{k+1}) \cong t(t_{k}) + hf(t_{k}, y(t_{k}))
+	\end{equation}
+	Este método puede usarse para resolver sistemas de ecuaciones diferenciales,  aplicando lo anterior a cada componente del sistema.	
 	\subsection{Método de Runge-Kutta}
 	\subsection{Método de Nystr\"om}
 	\subsection{Método de Newmark}
