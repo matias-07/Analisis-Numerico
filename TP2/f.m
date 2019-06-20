@@ -2,7 +2,7 @@ function [f] = f(y)
   % Recibe:
   %   -> y = [x1; v1; x2; v2]
   % Devuelve:
-  %   -> f = yprima
+  %   -> y' = f(y, t)
   
   u = 1/81.3;
   n = 1 - u;
