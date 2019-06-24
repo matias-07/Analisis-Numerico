@@ -106,7 +106,8 @@
 	\begin{equation}
 		y(t_{k+1}) \cong t(t_{k}) + hf(t_{k}, y(t_{k}))
 	\end{equation}
-	Este método puede usarse para resolver sistemas de ecuaciones diferenciales,  aplicando lo anterior a cada componente del sistema.	
+	Este método puede usarse para resolver sistemas de ecuaciones diferenciales,  aplicando lo anterior a cada componente del sistema.\\
+	El error cometido con este método se debe en parte al error de truncamiento local (dado por el Teorema de Taylor) en cada paso $k$ y al error cometido por utilizar como condición inicial en dicho paso $ y_{k-1} $, obtenido en el anterior. Se puede demostrar que si el problema está bien planteado, el error total es $ e = O(h) $.
 	\subsection{Método de Runge-Kutta}
 	\subsection{Método de Nystr\"om}
 	\subsection{Método de Newmark}
@@ -226,8 +227,11 @@
 
 		A continuación se muestra un gráfico de la trayectoria del satélite, que se mueve desde el extremo
 		derecho del gráfico hacia la izquierda.
-		
-		\includegraphics[width=\textwidth]{parteb.png}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{parteb.png}
+			\caption{\label{fig:parteb}Trayectoria del satélite obtenida con \emph{lsode}.}
+		\end{figure}
 
 	\subsection{Parte C}\label{sec:parteC}
 	Veremos ahora como se modifica la trayectoria aumentando el paso $h$. Para ello implementamos siguiente función.\\
@@ -235,7 +239,11 @@
 	\lstinputlisting[language=Octave]{lsode_con_distintos_h.m}
 
 	En el siguiente gráfico se puede observar lo obtenido para cuatro valores  de $h$ en particular, utilizando como condiciones iniciales las mismas que al comienzo de la parte b.\\
-	\includegraphics[width=\textwidth]{partec.png}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{partec.png}
+		\caption{\label{fig:partec}Trayectoria obtenida con distintos valores de \emph{h}.}
+	\end{figure}
 
 	\subsection{Parte D}\label{sec:parteD}
 	Resolveremos ahora el sistema en el intervalo $[0; 2]$ mediante el método de Euler. Las ecuaciones son:
@@ -257,7 +265,23 @@
 		y(2) = (-0.54958; -1.49872; 0.21286; -0.03654)
 	\end{equation}
 	La trayectoria obtenida en este caso es la siguiente.\\
-	\includegraphics[width=\textwidth]{parted.png}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{parted.png}
+		\caption{\label{fig:parted}Trayectoria del satélite obtenida con el método de Euler.}
+	\end{figure}
+	Calcularemos ahora el error cometido por este método. Asumiendo como valor correcto el obtenido por la función \emph{lsode} en la parte B, el error es:
+	\begin{equation}
+		e = (x_{1_{lsode}}; x_{2_{lsode}}) - (x_{1_{euler}}; x_{2_{euler}}) = (0,036514; -0,134042)
+	\end{equation}
+	Modificando el paso \emph{h}, vemos que el error es proporcional a éste, de acuerdo a la teoría. Por ejemplo, para $ h = 0.001 $ el error es $ e = (0.0063200;-0.0160951) $ y para $ h = 0.1 $ es $ e = (0,0098268;0.61340) $. \\
+	En el siguiente gráfico se puede ver que la dependencia entre h y la norma del error absoluto es aproximadamente lineal.\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{error_euler.png}
+		\caption{\label{fig:error_euler}Error cometido con el método de Euler en función de \emph{h}.}
+	\end{figure}
+	
 
 	\subsection{Parte E}\label{sec:parteE}
 

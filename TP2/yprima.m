@@ -1,5 +1,5 @@
 function [f]=yprima(y, t)
-    mu = 1 / 82.45;
+    mu = 1 / 81.3;
     eta = 1 - mu;
     
     d1 = sqrt((y(1) + mu)^2 + y(3)^2);
