@@ -109,7 +109,53 @@
 	Este método puede usarse para resolver sistemas de ecuaciones diferenciales,  aplicando lo anterior a cada componente del sistema.\\
 	El error cometido con este método se debe en parte al error de truncamiento local (dado por el Teorema de Taylor) en cada paso $k$ y al error cometido por utilizar como condición inicial en dicho paso $ y_{k-1} $, obtenido en el anterior. Se puede demostrar que si el problema está bien planteado, el error total es $ e = O(h) $.
 	\subsection{Método de Runge-Kutta}
+	Los métodos de Runge-Kutta son una familia de métodos para resolver numéricamente ecuaciones diferenciales ordinarias de orden $ n $, de la forma $ y'(t) = f(t, y) $, con condición inicial $ y(t_{0}) = y_{0} $.
+	En particular para este Trabajo Práctico se desea hallar soluciones utilizando los métodos de orden 2 y orden 4, cuyas expresiones se mencionan a continuación.
+	\subsubsection{Euler Modificado}
+	Dado el Problema de Valor Inicial, se puede expresar la solución de la ecuación diferencial ordinaria de orden 2 de la siguiente forma:
+	\begin{equation}
+		y_{n+1} = y_n + \frac{h}{2} (k_1 + k_2)
+	\end{equation}
+	donde $ k_1, k_2 $ son:
+
+	\begin{align*}
+		k_1 &= f(t_i, y_i)\\
+		k_2 &= f(t_i + h, y_i + hk_1)
+	\end{align*}
+
+	subsubsection{Runge-Kutta de orden 4}
+
+	\begin{equation}
+		y_{n+1} = y_n + \frac{h}{6} (k_1 + 2k_2 + 2k_3 + k_4)
+	\end{equation}
+	donde $ k_1, k_2, k_3, k_4 $ son:
+
+	\begin{align*}
+		k_1 &= f(t_i, y_i) \\
+		k_2 &= f(t_i + \frac{h}{2}, y_i + h \frac{k_1}{2})\\
+		k_3 &= f(t_i + \frac{h}{2}, y_i + h \frac{k_2}{2})\\
+		k_4 &= f(t_i + h, y_i + h k_3)
+	\end{align*}
+
+	El error global cometido por estos métodos es $ e = O(h^n) $.
+ 
 	\subsection{Método de Nystr\"om}
+
+	El método de Nystr\"om es un método de paso múltiple, que aplica de la siguiente manera, dada una EDO de primer orden:
+
+	\begin{align*}
+		y'(t) &= f(t, y)\\
+		y(t_{0}) &= y_{0}
+	\end{align*}
+
+	Las ecuaciones adoptan la siguiente forma: 
+
+	\begin{align*}
+		y_{i+1} = y_{i-1} + 2h y'(t_i), i = 1, 2,..., n - 1
+	\end{align*}
+
+	Se observa que se debe obtener un valor de arranque, $ y_1 $, para poder comenzar a resolver el problema. En el presente trabajo práctico se utilizará el método de Euler Modificado para aproximar el valor necesario. 
+
 	\subsection{Método de Newmark}
 
 	\subsection{Sistema de ecuaciones diferenciales de primer orden}\cite{burden_system_diff_eq}
@@ -248,6 +294,7 @@
 	\subsection{Parte D}\label{sec:parteD}
 	Resolveremos ahora el sistema en el intervalo $[0; 2]$ mediante el método de Euler. Las ecuaciones son:
 	\begin{equation}
+		\label{inicial}
 		\begin{cases}
 			x_1 (t_{k+1}) = x_1 (t_{k}) + hv_1 (t_{k})\\
 			v_1 (t_{k+1}) = x_2 (t_{k}) + h(2v_2 (t_{k}) + x_1 (t_{k}) - \eta\frac{x_1 (t_{k}) - \mu}{d_1 (t_{k})^{3}})\\
@@ -284,13 +331,109 @@
 	
 
 	\subsection{Parte E}\label{sec:parteE}
+	Resolveremos el sistema en el intervalo $[0; 2]$ mediante el método de Euler Modificado (RK2) y Runge-Kutta de orden 4, utilizando las mismas ecuaciones planteadas en \ref{inicial}. Los método de Runge-Kutta consiguen órdenes de convergencia similares a los de Taylor, pero no necesitan obtener las derivadas de la función $ f(t, y) $.
+	El código de la función implementada en \emph{Octave} para la resolución con Euler Modificado se muestra a continuación.
+	\lstinputlisting[language=Octave]{modified_euler.m}
+
+	Como mismas condiciones iniciales planteadas en la parte B del presente Trabajo Práctico. Se analizaron también los resultados tomando intervalos $ h = 0.1 $ y $ h = 0.001 $. Los resultados de cada corrida se encuentran en el repositorio en los siguientes archivos: \emph{modified\_euler-0.01.txt}, \emph{modified\_euler-0.1.txt} y \emph{modified\_euler-0.001.txt}.\\ 
+	El resultado obtenido para $ t = 2 $, con $ h = 0.01 $ es:
+	\begin{equation}
+		y(2) = (-0.513149; -1.189898; 0.084632; -0.468974)
+	\end{equation}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{modified_euler.png}
+		\caption{\label{fig:parted}Trayectoria del satélite obtenida con el método de Euler Modificado.}
+	\end{figure}
+	Se comprueba que, como dice la teoría, modificando el intervalo $ h $ se tiene más precisión en los resultados, ya que para $ h = 0.001 $,
+	\begin{align*}
+		y(2) &= (-0.513058; -1.183882; 0.078874; -0.485479)\\
+		x(2) &= (-0.513058; 0.078874)\\
+		v(2) &= (-1.183882; -0.485479)
+	\end{align*}
+	cuyos resultados se aproximan al vector determinado por la función \emph{lsode} de Octave.\\
+
+	Para la resolución mediante el método de Runge-Kutta de orden 4 se implementó la siguiente funcion:
+	\lstinputlisting[language=Octave]{rk4.m}
+
+	Con las mismas condiciones iniciales, y analizando en los mismos intervalos de $ h $ que en la resolución para el 2do orden, se llegaron a los siguientes resultados:
+	\begin{align*}
+		y(2) &= (-0.496993; -1.107211; 0.073956; -0.541870), h = 0.1\\
+		y(2) &= (-0.513059; -1.183832; 0.078815; -0.485642), h = 0.01\\
+		y(2) &= (-0.513060; -1.183835; 0.078817; -0.485633), h = 0.001
+	\end{align*}
+
+	Los resultados de cada corrida se encuentran en el repositorio en los siguientes archivos: \emph{rk4-0.01.txt}, \emph{rk4-0.1.txt} y \emph{rk4-0.001.txt}. La trayectoria obtenida es la siguiente:
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{rk4.png}
+		\caption{\label{fig:parted}Trayectoria del satélite obtenida con el método de Runge-Kutta orden 4.}
+	\end{figure}
+
+	Para calcular el error absoluto, se implementó la siguiente función que recibe por parámetro el método sobre el cual calcularlo:
+	\lstinputlisting[language=Octave]{error_segun_metodo.m}
+
+	Al llamarlo mediante las siguientes expresiones:
+
+	\begin{lstlisting}
+		>> error_segun_metodo('modified_euler', 'yprima', 0, 2, 0.01, [1.2 0 0 -0.8])
+		(e_x1, e_x2) = (0.00008750, -0.00581758)
+
+		>> error_segun_metodo('rk4', 'yprima', 0, 2, 0.01, [1.2 0 0 -0.8])
+		(e_x1, e_x2) = (-0.00000185, -0.00000042)
+	\end{lstlisting}
+
+	Se puede observar que, al igual que en el método de Euler, al hacer más pequeño el paso $ h $ el error tiende a ser más pequeño. Además, se observa que el método de Runge-Kutta de orden 4 converge más rápido que los otros métodos.
+
+	\begin{lstlisting}
+		>> error_segun_metodo('modified_euler', 'yprima', 0, 2, 0.001, [1.2 0 0 -0.8])
+		(e_x1, e_x2) = (-0.00000351, -0.00005982)
+
+		>> error_segun_metodo('rk4', 'yprima', 0, 2, 0.001, [1.2 0 0 -0.8])
+		(e_x1, e_x2) = (-0.00000137, -0.00000293)
+	\end{lstlisting}
 
 	\subsection{Parte F}\label{sec:parteF}
+	Utilizando las mismas condiciones iniciales ya planteadas, procederemos a resolver el sistema mediante el método de Nystrom, utilizando como método de arranque para obtener $ y_1 $ a Euler Modificado. El código que implementa la función está preparado para correr utilizando cualquier método de los ya presentados pasando como parámetro el archivo .m que lo contiene:
+	\begin{lstlisting}
+		[Y] = nystrom('yprima', 0, 2, 0.01, [1.2 0 0 -0.8], 'modified_euler')
+	\end{lstlisting}
+
+	\lstinputlisting[language=Octave]{nystrom.m}
+
+	Los resultados de cada corrida se encuentran en el repositorio en los siguientes archivos: \emph{nystrom-0.01.txt}, \emph{nystrom-0.1.txt} y \emph{nystrom-0.001.txt}. Con las mismas condiciones iniciales, y analizando en los mismos intervalos de $ h $ que en las resoluciones anteriores, se llegaron a los siguientes resultados:
+	\begin{align*}
+		y(2) &= (-0.499271; -0.669870; 0.548925; -0.066994), h = 0.1\\
+		y(2) &= (-0.512801; -1.187857; 0.084554; -0.470498), h = 0.01\\
+		y(2) &= (-0.513058; -1.183877; 0.078875; -0.485480), h = 0.001
+	\end{align*}
+
+	Mientras que la trayectoria del satélite se puede observar en el siguiente gráfico:
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{nystrom.png}
+		\caption{\label{fig:parted}Trayectoria del satélite obtenida con el método de Nystrom.}
+	\end{figure}
+
+	Para calcular el error absoluto, se implementó la siguiente función que recibe por parámetro el método sobre el cual calcularlo:
+	\lstinputlisting[language=Octave]{error_segun_metodo_arranque.m}
+
+	Al llamarlo mediante las siguientes expresiones:
+
+	\begin{lstlisting}
+		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.1, [1.2 0 0 -0.8], 'modified_euler')
+		(e_x1, e_x2) = (-0.01378996, -0.47011101)
+		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.01, [1.2 0 0 -0.8], 'modified_euler')
+		(e_x1, e_x2) = (-0.00025996, -0.00573996)
+		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.001, [1.2 0 0 -0.8], 'modified_euler')
+		(e_x1, e_x2) = (-0.00000375, -0.00006071)
+	\end{lstlisting}
+
+	se observa que nuevamente al modificar el intervalo de $ h $, se realizan más iteraciones y en consecuencia el error absoluto es más pequeño.
 
 	\subsection{Parte G}\label{sec:parteG}
-
-\section{Conclusiones}\label{sec:conc}
-
 
 \begin{thebibliography}{9} 
 	\bibitem{burden_system_diff_eq} 

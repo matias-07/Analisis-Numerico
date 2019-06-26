@@ -1,4 +1,4 @@
-function [Y] = heun(f, a, b, h, y0)
+function [Y] = nystrom(f, a, b, h, y0, metodo_arranque)
   % Recibe:
   %  -> f = yprima
   %  -> a, b extremos del intervalo
@@ -13,15 +13,17 @@ function [Y] = heun(f, a, b, h, y0)
   Y = zeros(k, length(y0));
   Y(1, :) = y0;
   
-  for i = 2 : k + 1
+  ARRANQUE = feval(metodo_arranque, f, a, b, h, y0);
+  
+  # obtuvimos valor de arranque
+  Y(2, :) = ARRANQUE(2, :); 
+  
+  for i = 3 : k + 1
     
-    y_n = Y(i-1, :);
+    y_n_1 = Y(i-2, :);
     yprima_n = feval(f, Y(i - 1, :)); 
     
-    q1 = yprima_n;
-    q2 = feval(f, y_n + h * yprima_n);
-    
-    Y(i, :) = y_n + (h / 2) * (q1 + q2);
+    Y(i, :) = y_n_1 + 2 * h * yprima_n;
     
   end
 end
