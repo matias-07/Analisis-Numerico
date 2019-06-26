@@ -157,6 +157,14 @@
 	Se observa que se debe obtener un valor de arranque, $ y_1 $, para poder comenzar a resolver el problema. En el presente trabajo práctico se utilizará el método de Euler Modificado para aproximar el valor necesario. 
 
 	\subsection{Método de Newmark}
+	Este método se obtiene a partir de la serie de Taylor y es usado para resolver EDOs de segundo orden.
+	Sea $ y'' = f(t, y, y') $, entonces las ecuaciones son:
+	\begin{equation}
+		\begin{cases}
+		y(t_{k+1}) = y(t_{k}) + hy'(t_{k}) + \frac{h^2}{2}[\alpha f(t_{k}; y(t_{k});y'(t_{k})) + (1 - \alpha) f(t_{k+1}, y(t_{k+1}); y'(t_{k+1}))]\\
+		y'(t_{k+1}) = y'(t_{k}) + h[\beta f(t_{k}; y(t_{k}); y'(t_{k}) + (1-\beta)f(t_{k+1},;y(t_{k+1});y'(t_{k+1}))]
+		\end{cases}
+	\end{equation}
 
 	\subsection{Sistema de ecuaciones diferenciales de primer orden}\cite{burden_system_diff_eq}
 		Sea un sistema de ecuaciones diferenciales de primer orden con la forma:
@@ -433,7 +441,7 @@
 
 	se observa que nuevamente al modificar el intervalo de $ h $, se realizan más iteraciones y en consecuencia el error absoluto es más pequeño.
 
-	\subsection{Parte G}\label{sec:parteG}
+	%\subsection{Parte G}\label{sec:parteG}
 
 \begin{thebibliography}{9} 
 	\bibitem{burden_system_diff_eq} 
@@ -449,6 +457,16 @@
 		Brooks/Cole - Cengage Learning\\
 		Sección 5.9 Higher Order Equations and Systems of Differential Equations\\
 		Páginas 334-336
+	\bibitem{burden_euler}
+		Richard L. Burden, J. Douglas Faires\\
+		\textit{Numerical Analysis (9th edition)}. \\
+		Brooks/Cole - Cengage Learning\\
+		Sección 5.2 Euler's Method\\
+		Páginas 266-268
+	\bibitem{error_analysis_euler_method}
+		UBC Math - University of British Columbia\\
+		Error Analysis of the Euler Method\\
+		\url{http://www.math.ubc.ca/~israel/m215/euler2/euler2.html}
 	 
 \end{thebibliography}
 
