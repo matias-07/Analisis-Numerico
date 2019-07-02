@@ -10,7 +10,7 @@ function graficar_posicion_metodo_con_arranque(metodo, f, a, b, h, y0, arranque)
   Y = feval(metodo, f, a, b, h, y0, arranque);
   
   # para mostrar trayectoria respecto al tiempo (izq a der)
-  x1 = Y(:, 1);  
+  x1 = Y(:, 1);
   x2 = Y(:, 3);
   
   plot(x1, x2, sprintf(";h = %d;", h));

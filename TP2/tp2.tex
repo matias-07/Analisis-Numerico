@@ -404,9 +404,9 @@
 
 	Los resultados de cada corrida se encuentran en el repositorio en los siguientes archivos: \emph{nystrom-0.01.txt}, \emph{nystrom-0.1.txt} y \emph{nystrom-0.001.txt}. Con las mismas condiciones iniciales, y analizando en los mismos intervalos de $ h $ que en las resoluciones anteriores, se llegaron a los siguientes resultados:
 	\begin{align*}
-		y(2) &= (-0.499271; -0.669870; 0.548925; -0.066994), h = 0.1\\
-		y(2) &= (-0.512801; -1.187857; 0.084554; -0.470498), h = 0.01\\
-		y(2) &= (-0.513058; -1.183877; 0.078875; -0.485480), h = 0.001
+		y(2) &= (-0.748174; -1.080440; 0.484854; 0.989748), h = 0.1\\
+		y(2) &= (-0.509491; -1.218613; 0.079715; -0.465028), h = 0.01\\
+		y(2) &= (-0.513022; -1.184207; 0.078824; -0.485425), h = 0.001
 	\end{align*}
 
 	Mientras que la trayectoria del satélite se puede observar en el siguiente gráfico:
@@ -424,11 +424,11 @@
 
 	\begin{lstlisting}
 		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.1, [1.2 0 0 -0.8], 'modified_euler')
-		(e_x1, e_x2) = (-0.01378996, -0.47011101)
+		(e_x1, e_x2) = (0.23511281, -0.40603998)
 		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.01, [1.2 0 0 -0.8], 'modified_euler')
-		(e_x1, e_x2) = (-0.00025996, -0.00573996)
+		(e_x1, e_x2) = (-0.00356984, -0.00090063)
 		>> error_segun_metodo_arranque('nystrom', 'yprima', 0, 2, 0.001, [1.2 0 0 -0.8], 'modified_euler')
-		(e_x1, e_x2) = (-0.00000375, -0.00006071)
+		(e_x1, e_x2) = (-0.00003906, -0.00001002)
 	\end{lstlisting}
 
 	se observa que nuevamente al modificar el intervalo de $ h $, se realizan más iteraciones y en consecuencia el error absoluto es más pequeño.

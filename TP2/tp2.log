@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.21)  25 JUN 2019 22:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.21)  2 JUL 2019 11:43
 entering extended mode
 **./tp2.tex
 (tp2.tex
@@ -596,10 +596,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
- 10244 strings out of 492945
- 142295 string characters out of 3135513
+ 10269 strings out of 492945
+ 142706 string characters out of 3135513
  590915 words of memory out of 3000000
- 13718 multiletter control sequences out of 15000+200000
+ 13724 multiletter control sequences out of 15000+200000
  17590 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,12n,43p,403b,2492s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -623,9 +623,9 @@ onts/type1/public/amsfonts/cm/cmr5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
 sfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb>
-Output written on tp2.pdf (15 pages, 1134826 bytes).
+Output written on tp2.pdf (15 pages, 1139378 bytes).
 PDF statistics:
- 874 PDF objects out of 1000 (max. 8388607)
- 277 named destinations out of 1000 (max. 500000)
+ 900 PDF objects out of 1000 (max. 8388607)
+ 296 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
