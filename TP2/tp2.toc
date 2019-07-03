@@ -1,18 +1,18 @@
 \babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}{section.1}% 
-\contentsline {section}{\numberline {2}Conceptos te\IeC {\'o}ricos}{2}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}todo de Euler}{2}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}M\IeC {\'e}todo de Runge-Kutta}{2}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Euler Modificado}{2}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}Runge-Kutta de orden 4}{2}{subsubsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3}M\IeC {\'e}todo de Nystr\"om}{3}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}M\IeC {\'e}todo de Newmark}{3}{subsection.2.4}% 
-\contentsline {subsection}{\numberline {2.5}Sistema de ecuaciones diferenciales de primer orden}{3}{subsection.2.5}% 
-\contentsline {subsection}{\numberline {2.6}Ecuaciones diferenciales de orden mayor a 1}{4}{subsection.2.6}% 
-\contentsline {section}{\numberline {3}Desarrollo}{4}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Parte A}{4}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Parte B}{5}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Parte C}{6}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Parte D}{7}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Parte E}{9}{subsection.3.5}% 
-\contentsline {subsection}{\numberline {3.6}Parte F}{12}{subsection.3.6}% 
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}{section.1}
+\contentsline {section}{\numberline {2}Conceptos te\IeC {\'o}ricos}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}todo de Euler}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}M\IeC {\'e}todo de Runge-Kutta}{2}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Euler Modificado}{2}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Runge-Kutta de orden 4}{2}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}M\IeC {\'e}todo de Nystr\"om}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}M\IeC {\'e}todo de Newmark}{3}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Sistema de ecuaciones diferenciales de primer orden}{3}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Ecuaciones diferenciales de orden mayor a 1}{4}{subsection.2.6}
+\contentsline {section}{\numberline {3}Desarrollo}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Parte A}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Parte B}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Parte C}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Parte D}{7}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Parte E}{9}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Parte F}{12}{subsection.3.6}
