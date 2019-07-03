@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.13)  3 JUL 2019 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.13)  3 JUL 2019 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -704,7 +704,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
  []
 
 [3] [4]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 279.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 270.
  (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/yprima.m
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -713,143 +713,143 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 )
-Overfull \hbox (8.65964pt too wide) in paragraph at lines 289--291
+Overfull \hbox (8.65964pt too wide) in paragraph at lines 280--282
 \T1/cmr/m/n/10 con lo que en la úl-ti-ma ite-ra-ción (en t=2) ob-te-ne-mos una po-si-ción fi-nal $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0[]51306\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]07881)$
  []
 
-<parteb.png, id=96, 578.16pt x 433.62pt>
+<parteb.png, id=94, 578.16pt x 433.62pt>
 File: parteb.png Graphic file (type png)
 <use parteb.png>
-Package pdftex.def Info: parteb.png  used on input line 296.
+Package pdftex.def Info: parteb.png  used on input line 287.
 (pdftex.def)             Requested size: 382.12502pt x 286.59369pt.
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
 
  []
 
-(/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/lsode_con_distintos_h.m)
-<partec.png, id=122, 1510.64375pt x 851.18pt>
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.293 
+       </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/parteb.png>] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/lsode_con_distintos_h.m)
+<partec.png, id=120, 1510.64375pt x 851.18pt>
 File: partec.png Graphic file (type png)
 <use partec.png>
-Package pdftex.def Info: partec.png  used on input line 308.
+Package pdftex.def Info: partec.png  used on input line 299.
 (pdftex.def)             Requested size: 382.12502pt x 215.30115pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--310
+Underfull \hbox (badness 10000) in paragraph at lines 296--301
 
  []
 
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+(/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/euler.m [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.311 
-       </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/parteb.png>] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/euler.m) [7pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.331 	\end{equation}
-                      </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/partec.png>]
-<parted.png, id=179, 1520.68124pt x 856.19875pt>
+l.2  
+      % Recibe: </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/partec.png>])
+<parted.png, id=148, 1520.68124pt x 856.19875pt>
 File: parted.png Graphic file (type png)
 <use parted.png>
-Package pdftex.def Info: parted.png  used on input line 335.
+Package pdftex.def Info: parted.png  used on input line 326.
 (pdftex.def)             Requested size: 382.12502pt x 215.14658pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--337
+Underfull \hbox (badness 10000) in paragraph at lines 322--328
 
  []
 
-<error_euler.png, id=180, 1015.795pt x 571.13374pt>
+<error_euler.png, id=149, 1015.795pt x 571.13374pt>
 File: error_euler.png Graphic file (type png)
 <use error_euler.png>
-Package pdftex.def Info: error_euler.png  used on input line 346.
+Package pdftex.def Info: error_euler.png  used on input line 337.
 (pdftex.def)             Requested size: 382.12502pt x 214.84566pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--348
+Underfull \hbox (badness 10000) in paragraph at lines 332--339
 
  []
 
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.349 
-       </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/parted.png>] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/modified_euler.m) [9pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+l.339 	\end{figure}
+                    </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/parted.png>] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/modified_euler.m [8pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.360 	\end{equation}
-                      </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_euler.png>]
-<modified_euler.png, id=224, 1204.5pt x 903.375pt>
+l.27 end
+         </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_euler.png>])
+<modified_euler.png, id=215, 1204.5pt x 903.375pt>
 File: modified_euler.png Graphic file (type png)
 <use modified_euler.png>
-Package pdftex.def Info: modified_euler.png  used on input line 363.
+Package pdftex.def Info: modified_euler.png  used on input line 354.
 (pdftex.def)             Requested size: 382.12502pt x 286.59093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--373
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
 
  []
 
-(/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/rk4.m [10pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+(/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/rk4.m [9pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.16  
-       for i = 2 : k + 1 </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/modified_euler.png (PNG copy)>])
-<rk4.png, id=244, 1204.5pt x 903.375pt>
+l.10  
+       t = a:h:b; </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/modified_euler.png (PNG copy)>])
+<rk4.png, id=230, 1204.5pt x 903.375pt>
 File: rk4.png Graphic file (type png)
 <use rk4.png>
-Package pdftex.def Info: rk4.png  used on input line 388.
+Package pdftex.def Info: rk4.png  used on input line 379.
 (pdftex.def)             Requested size: 382.12502pt x 286.59093pt.
- (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_segun_metodo.m [11pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+ [10] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_segun_metodo.m) [11pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3  
-      %  -> f = yprima </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/rk4.png (PNG copy)>]) (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/nystrom.m [12])
-<nystrom.png, id=327, 1204.5pt x 903.375pt>
+l.393 	
+       	(e_x1, e_x2) = (-0.00000185, -0.00000042) </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/rk4.png (PNG copy)>] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/nystrom.m [12])
+<nystrom.png, id=355, 1204.5pt x 903.375pt>
 File: nystrom.png Graphic file (type png)
 <use nystrom.png>
-Package pdftex.def Info: nystrom.png  used on input line 434.
+Package pdftex.def Info: nystrom.png  used on input line 425.
 (pdftex.def)             Requested size: 382.12502pt x 286.59093pt.
- [13] (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_segun_metodo_arranque.m) [14pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+ (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/error_segun_metodo_arranque.m [13pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.456 \begin{thebibliography}{9}
-                                 </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/nystrom.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 479.
+l.10  
+         errores(i, :) = yfinal_lsode(i, :) -  y_metodo(i, :); </home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/nystrom.png (PNG copy)>])
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 470.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
  (/home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/tp2.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 485.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 476.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 476.
  ) 
 Here is how much of TeX's memory you used:
- 10563 strings out of 492982
- 147001 string characters out of 6134896
- 447231 words of memory out of 5000000
- 13663 multiletter control sequences out of 15000+600000
+ 10559 strings out of 492982
+ 146961 string characters out of 6134896
+ 453353 words of memory out of 5000000
+ 13662 multiletter control sequences out of 15000+600000
  17903 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,12n,43p,466b,1895s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on /home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/tp2.pdf (16 pages, 1197656 bytes).
+Output written on /home/lucas/Desktop/Facu/75.12/Griggio/TPs/Analisis-Numerico/TP2/tp2.pdf (15 pages, 1196444 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 538 compressed objects within 6 object streams
- 300 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
